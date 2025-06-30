@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world
+spec:
+  type: NodePort
+  # This service will route traffic to Pods named hello_world
+  selector:
+    app: hello-world  # same as pod name in deployment-selector
+
+  ports:
+    - port: 5000 #Internal URL
+      targetPort: 5000  #Container Listeneing
